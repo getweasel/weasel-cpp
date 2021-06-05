@@ -292,7 +292,7 @@ namespace touca {
     /**
      *
      */
-    std::vector<std::string> Platform::elements() const
+    std::vector<ElementListResponseItem> Platform::elements() const
     {
         _error.clear();
         const auto& route = touca::format("/element/{}/{}", _api._team, _api._suite);
@@ -310,9 +310,12 @@ namespace touca {
             _error = "failed to parse server response";
             return {};
         }
-        std::vector<std::string> elements;
+        std::vector<ElementListResponseItem> elements;
         for (const auto& rjElement : doc.GetArray()) {
-            elements.emplace_back(rjElement["name"].GetString());
+            ElementListResponseItem item;
+            item.name = rjElement["name"].GetString();
+            item.slug = rjElement["slug"].GetString();
+            elements.emplace_back(item);
         }
         if (elements.empty()) {
             _error = "suite has no test case";

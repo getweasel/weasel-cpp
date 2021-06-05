@@ -45,7 +45,7 @@ namespace touca { namespace framework {
         // ask the server for the list of elements
 
         for (const auto& element : platform.elements()) {
-            push(element);
+            push(element.slug);
         }
     }
 

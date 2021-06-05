@@ -12,6 +12,14 @@ namespace touca {
     /**
      *
      */
+    struct ElementListResponseItem {
+        std::string name;
+        std::string slug;
+    };
+
+    /**
+     *
+     */
     struct Response {
         const int status = -1;
         const std::string body;
@@ -120,7 +128,7 @@ namespace touca {
          *
          * @return list of test cases of the baseline version of this suite.
          */
-        std::vector<std::string> elements() const;
+        std::vector<ElementListResponseItem> elements() const;
 
         /**
          * Checks if we are already authenticated with the server.
