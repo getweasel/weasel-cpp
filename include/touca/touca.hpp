@@ -219,6 +219,14 @@ namespace touca {
         const std::shared_ptr<touca::logger> logger);
 
     /**
+     * Queries the Touca server for the list of testcases that are submitted
+     * to the baseline version of this suite
+     *
+     * @return list of test cases of the baseline version of this suite.
+     */
+    TOUCA_CLIENT_API std::vector<std::string> get_testcases();
+
+    /**
      * @brief Declares name of the testcase to which all subsequent results
      *        will be submitted until a new testcase is declared.
      *

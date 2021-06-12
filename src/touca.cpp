@@ -51,6 +51,14 @@ namespace touca {
     /**
      *
      */
+    std::vector<std::string> get_testcases()
+    {
+        return instance.get_testcases();
+    }
+
+    /**
+     *
+     */
     void declare_testcase(const std::string& name)
     {
         instance.testcase(name);
