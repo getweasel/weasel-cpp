@@ -257,7 +257,7 @@ namespace touca {
     /**
      *
      */
-    std::shared_ptr<touca::Testcase> ClientImpl::testcase(const std::string& name)
+    std::shared_ptr<touca::Testcase> ClientImpl::declare_testcase(const std::string& name)
     {
         if (!_configured) {
             return nullptr;

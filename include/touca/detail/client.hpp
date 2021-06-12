@@ -105,7 +105,7 @@ namespace touca {
         /**
          *
          */
-        std::shared_ptr<Testcase> testcase(const std::string& name);
+        std::shared_ptr<Testcase> declare_testcase(const std::string& name);
 
         /**
          *
