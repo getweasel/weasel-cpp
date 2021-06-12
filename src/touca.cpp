@@ -182,14 +182,6 @@ namespace touca {
     /**
      *
      */
-    scoped_timer make_timer(const std::string& key)
-    {
-        return scoped_timer(key);
-    }
-
-    /**
-     *
-     */
     void save_binary(
         const std::string& path,
         const std::vector<std::string>& testcases,
@@ -223,23 +215,6 @@ namespace touca {
     bool seal()
     {
         return instance.seal();
-    }
-
-    /**
-     *
-     */
-    scoped_timer::scoped_timer(const std::string& name)
-        : _name(name)
-    {
-        start_timer(_name);
-    }
-
-    /**
-     *
-     */
-    scoped_timer::~scoped_timer()
-    {
-        stop_timer(_name);
     }
 
 } // namespace touca
