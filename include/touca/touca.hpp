@@ -22,6 +22,7 @@
 // for the users of this library to include only this header file
 
 #include "touca/devkit/object.hpp"
+#include "touca/extra/scoped_timer.hpp"
 
 /**
  * @namespace touca
