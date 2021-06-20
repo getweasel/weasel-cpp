@@ -290,7 +290,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        TypeWrapperBuilder& operator=(const TypeWrapperBuilder&);
         flatbuffers::Offset<TypeWrapper> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -338,7 +337,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        BoolBuilder& operator=(const BoolBuilder&);
         flatbuffers::Offset<Bool> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -384,7 +382,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        IntBuilder& operator=(const IntBuilder&);
         flatbuffers::Offset<Int> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -430,7 +427,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        UIntBuilder& operator=(const UIntBuilder&);
         flatbuffers::Offset<UInt> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -476,7 +472,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        FloatBuilder& operator=(const FloatBuilder&);
         flatbuffers::Offset<Float> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -522,7 +517,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        DoubleBuilder& operator=(const DoubleBuilder&);
         flatbuffers::Offset<Double> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -568,7 +562,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        StringBuilder& operator=(const StringBuilder&);
         flatbuffers::Offset<String> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -633,7 +626,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        ObjectMemberBuilder& operator=(const ObjectMemberBuilder&);
         flatbuffers::Offset<ObjectMember> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -702,7 +694,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        ObjectBuilder& operator=(const ObjectBuilder&);
         flatbuffers::Offset<Object> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -763,7 +754,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        ArrayBuilder& operator=(const ArrayBuilder&);
         flatbuffers::Offset<Array> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -828,7 +818,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        ResultBuilder& operator=(const ResultBuilder&);
         flatbuffers::Offset<Result> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -897,7 +886,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        AssertionBuilder& operator=(const AssertionBuilder&);
         flatbuffers::Offset<Assertion> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -966,7 +954,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        MetricBuilder& operator=(const MetricBuilder&);
         flatbuffers::Offset<Metric> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1026,7 +1013,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        ResultsBuilder& operator=(const ResultsBuilder&);
         flatbuffers::Offset<Results> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1082,7 +1068,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        AssertionsBuilder& operator=(const AssertionsBuilder&);
         flatbuffers::Offset<Assertions> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1138,7 +1123,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        MetricsBuilder& operator=(const MetricsBuilder&);
         flatbuffers::Offset<Metrics> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1231,7 +1215,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        MetadataBuilder& operator=(const MetadataBuilder&);
         flatbuffers::Offset<Metadata> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1334,7 +1317,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        MessageBuilder& operator=(const MessageBuilder&);
         flatbuffers::Offset<Message> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1390,7 +1372,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        MessageBufferBuilder& operator=(const MessageBufferBuilder&);
         flatbuffers::Offset<MessageBuffer> Finish()
         {
             const auto end = fbb_.EndTable(start_);
@@ -1446,7 +1427,6 @@ namespace fbs {
         {
             start_ = fbb_.StartTable();
         }
-        MessagesBuilder& operator=(const MessagesBuilder&);
         flatbuffers::Offset<Messages> Finish()
         {
             const auto end = fbb_.EndTable(start_);
