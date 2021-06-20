@@ -1,0 +1,87 @@
+// Copyright 2021 Touca, Inc. Subject to Apache-2.0 License.
+
+namespace touca;
+
+union Type {
+    Binary,
+    Boolean,
+    Decimal,
+    Integer,
+    Object,
+    String,
+    Vector
+}
+
+table TypeWrapper {
+    v:Type;
+}
+
+table Binary  { v:[ubyte] }
+table Boolean { v:bool; }
+table Integer { v:int64; }
+table Decimal { v:double; }
+table String  { v:string; }
+
+table ObjectMember {
+    k:string;
+    v:TypeWrapper;
+}
+
+table Object {
+    k:string;
+    v:[ObjectMember];
+}
+
+table Vector {
+    v:[TypeWrapper];
+    o:bool = true;
+}
+
+enum ResultType:ubyte {
+    Check = 1,
+    Trace,
+    Assert
+}
+
+table Result {
+    key:string;
+    val:TypeWrapper;
+    src:string;
+    tic:uint64;
+    typ:ResultType = Check;
+}
+
+table Metadata {
+    team:string;
+    suite:string;
+    case:string;
+    version:string;
+    built_at:string;
+}
+
+table Metric {
+    avg:uint64;
+    dev:uint64;
+    key:string;
+    rnd:uint64;
+    tic:uint64;
+    toc:uint64;
+}
+
+table Message {
+    metadata:Metadata;
+    metrics:[Metric];
+    results:[Result];
+    revision:short;
+    tic:uint64;
+}
+
+table MessageBuffer {
+    buf:[ubyte] (nested_flatbuffer: "Message");
+}
+
+table Messages {
+    messages:[MessageBuffer];
+}
+
+root_type Messages;
