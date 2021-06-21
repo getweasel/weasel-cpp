@@ -55,9 +55,12 @@ table Array {
     values:[TypeWrapper];
 }
 
+enum ResultType:ubyte { Check = 1, Assert }
+
 table Result {
     key:string;
     value:TypeWrapper;
+    typ:ResultType = Check; // v1.4.0-
 }
 
 table Assertion {

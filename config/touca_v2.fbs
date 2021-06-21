@@ -1,79 +1,81 @@
 // Copyright 2021 Touca, Inc. Subject to Apache-2.0 License.
 
-namespace touca;
+namespace touca.fbs;
 
-union Type {
-    Binary,
-    Boolean,
-    Decimal,
-    Integer,
-    Object,
-    String,
-    Vector
+union ValueType {
+    TypeBinary,
+    TypeBoolean,
+    TypeDecimal,
+    TypeInteger,
+    TypeObject,
+    TypeString,
+    TypeVector
 }
 
 table TypeWrapper {
-    v:Type;
+    v:ValueType;
 }
 
-table Binary  { v:[ubyte] }
-table Boolean { v:bool; }
-table Integer { v:int64; }
-table Decimal { v:double; }
-table String  { v:string; }
+table TypeBinary  { v:[ubyte]; }
+table TypeBoolean { v:bool; }
+table TypeInteger { v:int64; }
+table TypeDecimal { v:double; }
+table TypeString  { v:string; }
 
 table ObjectMember {
     k:string;
     v:TypeWrapper;
 }
 
-table Object {
+table TypeObject {
     k:string;
     v:[ObjectMember];
 }
 
-table Vector {
+table TypeVector {
     v:[TypeWrapper];
     o:bool = true;
 }
 
 enum ResultType:ubyte {
     Check = 1,
-    Trace,
-    Assert
+    Assert,
+    Trace
 }
 
 table Result {
-    key:string;
-    val:TypeWrapper;
-    src:string;
-    tic:uint64;
     typ:ResultType = Check;
+    key:string;
+    tic:uint32;
+    val:ValueType;
 }
 
-table Metadata {
-    team:string;
-    suite:string;
-    case:string;
-    version:string;
-    built_at:string;
+enum MetricType:ubyte {
+    Check = 1
 }
 
 table Metric {
-    avg:uint64;
-    dev:uint64;
+    typ:MetricType = Check;
     key:string;
-    rnd:uint64;
-    tic:uint64;
-    toc:uint64;
+    tic:uint32;
+    toc:uint32;
+    num:uint32;
+    avg:uint32;
+    dev:uint32;
+}
+
+table Metadata {
+    tic:uint64; 
+    team:string;
+    suite:string;
+    batch:string;
+    case:string;
 }
 
 table Message {
     metadata:Metadata;
     metrics:[Metric];
     results:[Result];
-    revision:short;
-    tic:uint64;
 }
 
 table MessageBuffer {
@@ -82,6 +84,7 @@ table MessageBuffer {
 
 table Messages {
     messages:[MessageBuffer];
+    rev:short;
 }
 
 root_type Messages;
