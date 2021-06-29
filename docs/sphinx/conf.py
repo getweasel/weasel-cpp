@@ -15,8 +15,7 @@ import os
 import subprocess
 # sys.path.insert(0, os.path.abspath('.'))
 
-if os.environ.get('READTHEDOCS', None) == 'True':
-    subprocess.call('cd ../doxygen; doxygen', shell=True)
+subprocess.call('cd ../..; doxygen docs/doxygen/Doxyfile', shell=True)
 
 # -- Project information -----------------------------------------------------
 
