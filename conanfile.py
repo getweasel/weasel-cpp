@@ -10,7 +10,7 @@ class ToucaConan(ConanFile):
     topics = ( "regression-testing", "test-framework", "test-automation" )
     url = "https://docs.touca.io"
     license = "Apache-2.0"
-    version ="1.4.0"
+    version = "1.4.1"
     author = "Touca, Inc. <hello@touca.io>"
     settings = "os", "compiler", "build_type", "arch"
     options = {
